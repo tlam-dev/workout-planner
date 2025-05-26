@@ -12,9 +12,6 @@ const app = express();
 app.use(express.json()); // Middleware to parse JSON bodies
 app.use(cors()); // Middleware to enable CORS
 
-// Middleware to log requests
-//app.use("/workouts", workoutRoutes);
-//app.use("/schedule", scheduleRoutes);
 
 app.get("/", (req, res) => {
   res.send("Welcome to the backend of Workout API");

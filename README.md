@@ -1,4 +1,4 @@
-# Workout Planner Web App
+# Workout Planner App
 
 ## Table of Contents
 - [Description](#description)
@@ -10,7 +10,7 @@
 - [Update Plans](#update-plans)
 
 ## Description
-This **Workout Planner Web App** can read and display workout data as a weekly schedule. It allows customization of the schedule with pre-set and/or custom workouts.
+This **Workout Planner App** can read and display workout data as a weekly schedule. It allows customization of the schedule with pre-set and/or custom workouts.
 
 The app is a personal mini-project for practicing React and Node.js full-stack application development.
 
