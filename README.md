@@ -35,13 +35,13 @@ Below is the format of an example workout:
     - Creating .env files in the backend and frontend folders with the desired PORT variable OR
     - Editing the PORT_NUMBER variable in the following folders:
 
-        ```
-        backend/server.js
-        frontend/src/components/ScheduleView.js
-        frontend/src/components/WorkoutForm.js
-        frontend/src/WorkoutList.js
-        frontend/src/WorkoutPicker.js
-        ```
+    ```
+    backend/server.js
+    frontend/src/components/ScheduleView.js
+    frontend/src/components/WorkoutForm.js
+    frontend/src/WorkoutList.js
+    frontend/src/WorkoutPicker.js
+    ```
 2. Run the following commands in the terminal:
 
     ```
@@ -64,8 +64,28 @@ An example JSON file for the project can be found in **backend**.
 - Frontend: React
 - Backend: Node.js
 
+## Version History
+### 1.00
+- Functional App with the following pages:
+    1. Home
+    2. Schedule
+    3. Workouts List
+    4. Settings (placeholder for future updates)
+- Supports fetching and displaying data from JSON files
+- Frontend and backend in local ports
+
 ## Update Plans
 ### CRUD Operations Support
 - In-app support of CRUD operations with workout data and schedule: user no longer needs to edit the json file directly but through the user interface of the application.
-### Possible Update
+### UI Changes
+- Add buttons to allow customization of schedule view.
+- Add buttons and input blocks to support CRUD operations
+- Improve UI
+- More customization options
+- Dark mode
+### Unit Tests
+- For testing Javascript functions
+### Possible Updates
 - Mobile Version
+- External NoSQL database connection for retrieving JSON data for default workouts and the example schedule
+- Deployment to GitHub Pages
