@@ -1,0 +1,60 @@
+{
+  "Monday": {
+    "tag": "Arm Day",
+    "workouts": [
+      { "name": "Bicep Curls", "reps": 10, "sets": 3, "time": 0},
+      { "name": "Triceps Dips", "reps": 10, "sets": 3, "time": 0},
+      { "name": "Break", "reps": 0, "sets": 0, "time": 60},
+      { "name": "Hammer Curls", "reps": 10, "sets": 3, "time": 0}
+    ]
+  },
+  "Tuesday": {
+    "tag": "Leg Day",
+    "workouts": [
+      { "name": "Squats", "reps": 10, "sets": 3, "time": 0},
+      { "name": "Lunges", "reps": 10, "sets": 3, "time": 0},
+      { "name": "Break", "reps": 0, "sets": 0, "time": 0},
+      { "name": "Leg Press", "reps": 10, "sets": 3, "time": 0}
+    ]
+  },
+  "Wednesday": {
+    "tag": "Rest Day",
+    "workouts": [
+      { "name": "Rest", "reps": 0, "sets": 0, "time": 0 } 
+    ]
+  },
+  "Thursday": {
+    "tag": "Back Day",
+    "workouts": [
+      { "name": "Pull-Ups", "reps": 10, "sets": 3, "time": 0},
+      { "name": "Bent Over Rows", "reps": 10, "sets": 3, "time": 0},
+      { "name": "Break", "reps": 0, "sets": 0, "time": 60},
+      { "name": "Deadlifts", "reps": 10, "sets": 3, "time": 0}
+    ]
+  },
+  "Friday": {
+    "tag": "Chest Day",
+    "workouts": [
+      { "name": "Bench Press", "reps": 10, "sets": 3, "time": 0},
+      { "name": "Push-Ups", "reps": 10, "sets": 3, "time": 0},
+      { "name": "Break", "reps": 0, "sets": 0, "time": 60},
+      { "name": "Chest Flys", "reps": 10, "sets": 3, "time": 0}
+    ]
+  },
+  "Saturday": {
+    "tag": "Cardio Day",
+    "workouts": [
+      { "name": "Running", "reps": 0, "sets": 0, "time": 1800},
+      { "name": "Cycling", "reps": 0, "sets": 0, "time": 600},
+      { "name": "Break", "reps": 0, "sets": 0, "time": 300},
+      { "name": "Jump Rope", "reps": 0, "sets": 0, "time": 180}
+    ]
+  },
+  "Sunday": {
+    "tag": "Rest Day",
+    "workouts": [
+      { "name": "Rest", "reps": 0, "sets": 0, "time": 0 } 
+    ]
+  }
+}
+

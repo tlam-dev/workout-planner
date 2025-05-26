@@ -1,0 +1,94 @@
+const fs = require("fs");
+const path = require("path");
+
+const customWorkouts = "../userWorkouts.json"; 
+
+const defaultFilePath = path.join(__dirname, "../defaultWorkouts.json"); // File for default workouts, do not modify
+const userFilePath = path.join(__dirname, customWorkouts); // File for user's custom workouts, does not include default workouts
+
+// Get both default and user workouts
+exports.getAllWorkouts = (req, res) => {
+  try {
+    const defaultWorkouts = JSON.parse(fs.readFileSync(defaultFilePath, "utf-8"));
+    const userWorkouts = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
+    
+    res.status(200).json({ defaultWorkouts, userWorkouts });
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching workouts", error });
+  }
+};
+
+// Get only user-created workouts
+exports.getUserWorkouts = (req, res) => {
+  try {
+    const userWorkouts = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
+    res.status(200).json(userWorkouts);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching user workouts", error });
+  }
+};
+
+// Get only default workouts
+exports.getDefaultWorkouts = (req, res) => {
+  try {
+    const defaultWorkouts = JSON.parse(fs.readFileSync(defaultFilePath, "utf-8"));
+    res.status(200).json(defaultWorkouts);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching default workouts", error });
+  }
+};
+
+// Let users CREATE their own workouts
+exports.addUserWorkout = (req, res) => {
+  try {
+    let userWorkouts = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
+    const newWorkout = { id: Date.now(), ...req.body };
+    
+    userWorkouts.push(newWorkout);
+    fs.writeFileSync(userFilePath, JSON.stringify(userWorkouts, null, 2)); // Save the updated workouts to the user file userWorkouts.json
+
+    res.status(201).json({ message: "Workout added successfully", workout: newWorkout });
+  } catch (error) {
+    res.status(500).json({ message: "Error saving workout", error });
+  }
+};
+
+// Let users UPDATE their own workouts
+exports.updateUserWorkout = (req, res) => {
+  try {
+    let userWorkouts = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
+    const { id } = req.params;
+    const { name, muscleGroup, duration } = req.body;
+
+    const workoutIndex = userWorkouts.findIndex(workout => workout.id === parseInt(id));
+    if (workoutIndex === -1) {
+      return res.status(404).json({ message: "Workout not found" });
+    }
+
+    // Update the workout
+    userWorkouts[workoutIndex] = { ...userWorkouts[workoutIndex], name, muscleGroup, duration };
+
+    fs.writeFileSync(userFilePath, JSON.stringify(userWorkouts, null, 2));
+
+    res.status(200).json({ message: "Workout updated successfully", workout: userWorkouts[workoutIndex] });
+  } catch (error) {
+    res.status(500).json({ message: "Error updating workout", error });
+  }
+};
+
+
+// Let users DELETE their own workouts *NOT default workouts*
+exports.deleteUserWorkout = (req, res) => {
+  try {
+    let userWorkouts = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
+    const { id } = req.params;
+
+    userWorkouts = userWorkouts.filter(workout => workout.id !== parseInt(id));
+    fs.writeFileSync(userFilePath, JSON.stringify(userWorkouts, null, 2));
+
+    res.status(200).json({ message: "Workout deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ message: "Error deleting workout", error });
+  }
+};
+

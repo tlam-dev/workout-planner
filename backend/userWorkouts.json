@@ -1,0 +1,10 @@
+[
+    { "name": "Custom1", "group": "Chest", "duration": 10 , "rep": 10, "set": 3 },
+    { "name": "Custom2", "group": "Arm", "duration": 15 , "rep": 10, "set": 3 },
+    { "name": "Custom3", "group": "Leg", "duration": 12 , "rep": 10, "set": 3 },
+    { "name": "Custom4", "group": "Core", "duration": 10 , "rep": 10, "set": 3 },
+    { "name": "Custom5", "group": "Back", "duration": 10 , "rep": 10, "set": 3 },
+    { "name": "Custom6", "group": "Shoulders", "duration": 12 , "rep": 10, "set": 3 },
+    { "name": "Custom7", "group": "", "duration": 30, "rep": 0, "set": 0 }
+]
+
